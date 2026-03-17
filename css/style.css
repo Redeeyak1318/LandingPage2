@@ -1,52 +1,96 @@
-
 /* Animation states */
-[data-animate] { opacity: 0; transform: translateY(30px); }
-[data-animate].is-visible { opacity: 1; transform: translateY(0); }
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
-    :root {
-      --color-bg: #f5f3ef;
-      --color-bg-warm: #faf8f4;
-      --color-text: #080808;
-      --color-text-soft: #333333;
-      --color-text-muted: #707070;
-      --color-accent: #c8b38e;
-      --font-serif: 'Playfair Display', serif;
-      --font-sans: 'Inter', sans-serif;
-    }
+:root {
+  --color-bg: #f5f3ef;
+  --color-bg-warm: #faf8f4;
+  --color-text: #080808;
+  --color-text-soft: #333333;
+  --color-text-muted: #707070;
+  --color-accent: #c8b38e;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
 
-    .font-serif { font-family: var(--font-serif); }
-    .font-sans { font-family: var(--font-sans); }
+.font-serif {
+  font-family: var(--font-serif);
+}
 
-    .editorial-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 2rem;
-    }
+.font-sans {
+  font-family: var(--font-sans);
+}
 
-    .line-tight { line-height: 0.95; }
-    .tracking-editorial { tracking: -0.04em; }
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
 
-    /* Transitions */
-    @view-transition {
-      navigation: auto;
-    }
+.line-tight {
+  line-height: 0.95;
+}
 
-    ::view-transition-old(root),
-    ::view-transition-new(root) {
-      animation-duration: 0.4s;
-      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
+.tracking-editorial {
+  tracking: -0.04em;
+}
 
-    @keyframes fade-out {
-      from { opacity: 1; transform: scale(1); }
-      to { opacity: 0; transform: scale(0.98); }
-    }
+/* Transitions */
+@view-transition {
+  navigation: auto;
+}
 
-    @keyframes fade-in {
-      from { opacity: 0; transform: scale(1.02); }
-      to { opacity: 1; transform: scale(1); }
-    }
-  
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hide scrollbar completely */
+html,
+body {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE & Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari */
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
