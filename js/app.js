@@ -164,7 +164,7 @@
     });
 
     // Workflow step borders
-    const workflowSteps = document.querySelectorAll('.workflow__step');
+    const workflowSteps = document.querySelectorAll('.group');
     workflowSteps.forEach((step) => {
       gsap.fromTo(
         step,
@@ -183,7 +183,7 @@
     });
 
     // Intelligence blocks borders
-    const intBlocks = document.querySelectorAll('.intelligence__block');
+    const intBlocks = document.querySelectorAll('.not-used-now');
     if (intBlocks.length > 0) {
       intBlocks.forEach((block) => {
         gsap.fromTo(
@@ -204,7 +204,7 @@
     }
 
     // Metric values — slow fade
-    document.querySelectorAll('.intelligence__metric-val').forEach((val) => {
+    document.querySelectorAll('.not-used-now').forEach((val) => {
       gsap.fromTo(
         val,
         { opacity: 0, y: 10 },
@@ -223,7 +223,7 @@
     });
 
     // Integration names — whisper soft stagger
-    const intNames = document.querySelectorAll('.integrations__name');
+    const intNames = document.querySelectorAll('.not-used-now');
     if (intNames.length > 0) {
       gsap.fromTo(
         intNames,
@@ -244,7 +244,7 @@
     }
 
     // Pricing cards — calm fade
-    const pricingPlans = document.querySelectorAll('.pricing__plan');
+    const pricingPlans = document.querySelectorAll('#pricing > div > div > div');
     pricingPlans.forEach((plan, i) => {
       gsap.fromTo(
         plan,
@@ -256,7 +256,7 @@
           delay: i * 0.15,
           ease: 'power3.out',
           scrollTrigger: {
-            trigger: '.pricing__grid',
+            trigger: '#pricing > div > div',
             start: 'top 80%',
             once: true,
           },
@@ -268,7 +268,7 @@
 
   /* ─── Hero Parallax & Entrance ─────────────────────────── */
   function initHero() {
-    const heroImg = document.querySelector('.hero__bg-img');
+    const heroImg = document.querySelector('main section:first-of-type img');
 
     // Very subtle parallax on hero image (no scale)
     if (heroImg) {
@@ -289,14 +289,14 @@
 
     // Nav fade in
     tl.fromTo(
-      '.nav',
+      'nav',
       { opacity: 0, y: -10 },
       { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out' }
     );
 
     // Hero title
     tl.fromTo(
-      '.hero__title',
+      'main section:first-of-type h1',
       { opacity: 0, y: 40 },
       { opacity: 1, y: 0, duration: 1.6, ease: 'power3.out' },
       '-=0.7'
@@ -304,7 +304,7 @@
 
     // Hero subtitle
     tl.fromTo(
-      '.hero__subtitle',
+      'main section:first-of-type h1 ~ p',
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 1.4, ease: 'power3.out' },
       '-=1.0'
@@ -312,7 +312,7 @@
 
     // Hero actions
     tl.fromTo(
-      '.hero__actions',
+      'main section:first-of-type a',
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' },
       '-=0.9'

@@ -3,37 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elyra — Intelligent Workflow Platform</title>
-  
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Elyra ΓÇö Intelligent Workflow Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
+    :root {
+      --color-bg: #f5f3ef;
+      --color-bg-warm: #faf8f4;
+      --color-text: #080808;
+      --color-text-soft: #333333;
+      --color-text-muted: #707070;
+      --color-accent: #c8b38e;
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Inter', sans-serif;
+    }
 
-  <!-- GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    .font-serif { font-family: var(--font-serif); }
+    .font-sans { font-family: var(--font-sans); }
 
-  <!-- Lenis Smooth Scroll -->
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2rem;
+    }
 
-  <!-- Barba.js Page Transitions -->
-  <script src="https://unpkg.com/@barba/core@2.10.3/dist/barba.umd.js" defer></script>
+    .line-tight { line-height: 0.95; }
+    .tracking-editorial { tracking: -0.04em; }
 
+    /* Transitions */
+    @view-transition {
+      navigation: auto;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: 0.4s;
+      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes fade-out {
+      from { opacity: 1; transform: scale(1); }
+      to { opacity: 0; transform: scale(0.98); }
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: scale(1.02); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
-  <!-- Barba.js Wrapper -->
-  <div data-barba="wrapper">
-    <div data-barba="container" data-barba-namespace="home">
-      
   <div class="min-h-screen bg-[#f5f3ef] text-[#080808] selection:bg-[#c8b38e]/30">
     
     <!-- Navigation -->
-    <nav id="mainNav" class="nav--scrolled fixed top-0 left-0 right-0 z-50 bg-[#f5f3ef] py-6 border-b border-[#e7e4df]/50">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#f5f3ef] py-6 border-b border-[#e7e4df]/50">
       <div class="max-w-[1440px] mx-auto px-6 lg:px-16 flex items-center justify-between">
         <a href="/" id="nav-logo-link" class="font-serif text-2xl tracking-tighter">Elyra</a>
         <div class="hidden md:flex gap-12">
@@ -51,12 +76,12 @@
       <section class="pt-40 pb-24 px-6 lg:px-16 max-w-[1440px] mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div class="lg:col-span-7">
-            <p data-animate="fade-up" class="text-[11px] uppercase tracking-[0.3em] text-[#707070] mb-12">Established 2026</p>
+            <p class="text-[11px] uppercase tracking-[0.3em] text-[#707070] mb-12">Established 2026</p>
             <h1 class="font-serif text-[clamp(4.5rem,10vw,10.5rem)] line-tight tracking-editorial mb-16">
               Focus by <br>
               <span class="italic font-light">design</span>
             </h1>
-            <p data-animate="fade-up" class="text-xl font-light text-[#333333] max-w-lg leading-relaxed mb-12">
+            <p class="text-xl font-light text-[#333333] max-w-lg leading-relaxed mb-12">
               Intentional work. Distilled to its essence. We remove the architectural noise of traditional management, leaving only clarity.
             </p>
             <div class="flex items-center gap-12">
@@ -69,12 +94,12 @@
           </div>
           <div class="lg:col-span-5 relative">
             <div class="aspect-[3/4] overflow-hidden">
-              <img data-animate="fade-up" src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Minimal Architecture" class="w-full h-full object-cover grayscale-[0.1] brightness-95">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Minimal Architecture" class="w-full h-full object-cover grayscale-[0.1] brightness-95">
             </div>
             <!-- Overlapping beige block -->
             <div class="absolute -bottom-10 -left-12 bg-[#c8b38e] p-10 hidden xl:block">
               <span class="text-[10px] uppercase tracking-[0.4em] text-white/80 block mb-4">Collection 01</span>
-              <h2 data-animate="fade-up" class="font-serif text-3xl text-white font-light">The New Standard <br>in Clarity.</h2>
+              <h2 class="font-serif text-3xl text-white font-light">The New Standard <br>in Clarity.</h2>
             </div>
           </div>
         </div>
@@ -86,16 +111,16 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div class="relative">
               <div class="aspect-[16/10] overflow-hidden">
-                <img data-animate="fade-up" src="https://images.unsplash.com/photo-1600607688969-a5e2f7b82f05?q=80&w=2100&auto=format&fit=crop" alt="Minimalist Space" class="w-full h-full object-cover">
+                <img src="https://images.unsplash.com/photo-1600607688969-a5e2f7b82f05?q=80&w=2100&auto=format&fit=crop" alt="Minimalist Space" class="w-full h-full object-cover">
               </div>
               <div class="absolute -top-12 -right-12 w-64 aspect-square overflow-hidden shadow-2xl hidden lg:block">
-                <img data-animate="fade-up" src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1925&auto=format&fit=crop" alt="Detail" class="w-full h-full object-cover grayscale">
+                <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1925&auto=format&fit=crop" alt="Detail" class="w-full h-full object-cover grayscale">
               </div>
             </div>
             <div class="max-w-xl">
-              <p data-animate="fade-up" class="text-[11px] uppercase tracking-[0.3em] text-[#c8b38e] mb-6 font-semibold">Philosophy</p>
-              <h2 data-animate="fade-up" class="font-serif text-6xl mb-8 tracking-tighter">Quiet focus.</h2>
-              <p data-animate="fade-up" class="text-lg font-light text-[#333333] leading-[1.8] mb-12">
+              <p class="text-[11px] uppercase tracking-[0.3em] text-[#c8b38e] mb-6 font-semibold">Philosophy</p>
+              <h2 class="font-serif text-6xl mb-8 tracking-tighter">Quiet focus.</h2>
+              <p class="text-lg font-light text-[#333333] leading-[1.8] mb-12">
                 The best systems disappear. We removed the noise, leaving only the framework you need to do your core work. Our approach prioritizes deep work sessions over frantic task management.
               </p>
               <div class="flex items-center gap-6">
@@ -111,31 +136,31 @@
       <section id="capability" class="py-32 px-6 lg:px-16 max-w-[1440px] mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div class="lg:col-span-4 sticky top-32 h-fit">
-            <p data-animate="fade-up" class="text-[11px] uppercase tracking-[0.3em] text-[#707070] mb-6">Capabilities</p>
-            <h2 data-animate="fade-up" class="font-serif text-5xl mb-8 leading-tight">Built for <br>depth</h2>
-            <p data-animate="fade-up" class="text-base font-light text-[#707070]">Every pixel is intentional, every interaction is earned. No generic templates, no unnecessary bells.</p>
+            <p class="text-[11px] uppercase tracking-[0.3em] text-[#707070] mb-6">Capabilities</p>
+            <h2 class="font-serif text-5xl mb-8 leading-tight">Built for <br>depth</h2>
+            <p class="text-base font-light text-[#707070]">Every pixel is intentional, every interaction is earned. No generic templates, no unnecessary bells.</p>
           </div>
           <div class="lg:col-span-8 space-y-24">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div class="pt-12 border-t border-[#e7e4df]">
                 <span class="font-serif text-2xl text-[#c8b38e] italic mb-6 block">01.</span>
-                <h3 data-animate="fade-up" class="font-serif text-3xl mb-4">Focus</h3>
-                <p data-animate="fade-up" class="text-sm font-light text-[#333333] leading-relaxed">Surface what matters. Elyra organizes tasks quietly, maintaining momentum without the need for active management.</p>
+                <h3 class="font-serif text-3xl mb-4">Focus</h3>
+                <p class="text-sm font-light text-[#333333] leading-relaxed">Surface what matters. Elyra organizes tasks quietly, maintaining momentum without the need for active management.</p>
               </div>
               <div class="pt-12 border-t border-[#e7e4df] md:mt-16">
                 <span class="font-serif text-2xl text-[#c8b38e] italic mb-6 block">02.</span>
-                <h3 data-animate="fade-up" class="font-serif text-3xl mb-4">Collaboration</h3>
-                <p data-animate="fade-up" class="text-sm font-light text-[#333333] leading-relaxed">Work together without the noise. Threaded discussions and shared context keep your team aligned.</p>
+                <h3 class="font-serif text-3xl mb-4">Collaboration</h3>
+                <p class="text-sm font-light text-[#333333] leading-relaxed">Work together without the noise. Threaded discussions and shared context keep your team aligned.</p>
               </div>
               <div class="pt-12 border-t border-[#e7e4df]">
                 <span class="font-serif text-2xl text-[#c8b38e] italic mb-6 block">03.</span>
-                <h3 data-animate="fade-up" class="font-serif text-3xl mb-4">Automation</h3>
-                <p data-animate="fade-up" class="text-sm font-light text-[#333333] leading-relaxed">Automate routine actions naturally. Flexible rules run quietly in the background without rigid constraints.</p>
+                <h3 class="font-serif text-3xl mb-4">Automation</h3>
+                <p class="text-sm font-light text-[#333333] leading-relaxed">Automate routine actions naturally. Flexible rules run quietly in the background without rigid constraints.</p>
               </div>
               <div class="pt-12 border-t border-[#e7e4df] md:mt-16">
                 <span class="font-serif text-2xl text-[#c8b38e] italic mb-6 block">04.</span>
-                <h3 data-animate="fade-up" class="font-serif text-3xl mb-4">Workspace</h3>
-                <p data-animate="fade-up" class="text-sm font-light text-[#333333] leading-relaxed">One space for everything. Documents, discussions, tasks, and timelines exist in a clear environment.</p>
+                <h3 class="font-serif text-3xl mb-4">Workspace</h3>
+                <p class="text-sm font-light text-[#333333] leading-relaxed">One space for everything. Documents, discussions, tasks, and timelines exist in a clear environment.</p>
               </div>
             </div>
           </div>
@@ -146,33 +171,33 @@
       <section id="workflow" class="py-32 bg-white">
         <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
           <div class="text-center mb-24">
-            <p data-animate="fade-up" class="text-[11px] uppercase tracking-[0.3em] text-[#707070] mb-6">Process</p>
-            <h2 data-animate="fade-up" class="font-serif text-7xl tracking-tighter mb-8">Intentional process</h2>
+            <p class="text-[11px] uppercase tracking-[0.3em] text-[#707070] mb-6">Process</p>
+            <h2 class="font-serif text-7xl tracking-tighter mb-8">Intentional process</h2>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
             <div class="group">
               <div class="aspect-[4/5] overflow-hidden mb-8">
-                <img data-animate="fade-up" src="https://images.unsplash.com/photo-1542744094-24638eff58bb?q=80&w=2071&auto=format&fit=crop" alt="Step 01" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale">
+                <img src="https://images.unsplash.com/photo-1542744094-24638eff58bb?q=80&w=2071&auto=format&fit=crop" alt="Step 01" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale">
               </div>
               <span class="text-[11px] uppercase tracking-[0.4em] text-[#c8b38e] block mb-4 font-bold italic">Phase I</span>
-              <h3 data-animate="fade-up" class="font-serif text-3xl mb-4">Gather</h3>
-              <p data-animate="fade-up" class="text-sm font-light text-[#333333] leading-relaxed">Bring your projects and team into one workspace without forcing a new methodology.</p>
+              <h3 class="font-serif text-3xl mb-4">Gather</h3>
+              <p class="text-sm font-light text-[#333333] leading-relaxed">Bring your projects and team into one workspace without forcing a new methodology.</p>
             </div>
             <div class="group md:mt-24">
               <div class="aspect-[4/5] overflow-hidden mb-8">
-                <img data-animate="fade-up" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop" alt="Step 02" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop" alt="Step 02" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale">
               </div>
               <span class="text-[11px] uppercase tracking-[0.4em] text-[#c8b38e] block mb-4 font-bold italic">Phase II</span>
-              <h3 data-animate="fade-up" class="font-serif text-3xl mb-4">Organize</h3>
-              <p data-animate="fade-up" class="text-sm font-light text-[#333333] leading-relaxed">Systematically surface what needs attention. Structure emerges naturally.</p>
+              <h3 class="font-serif text-3xl mb-4">Organize</h3>
+              <p class="text-sm font-light text-[#333333] leading-relaxed">Systematically surface what needs attention. Structure emerges naturally.</p>
             </div>
             <div class="group md:mt-12">
               <div class="aspect-[4/5] overflow-hidden mb-8">
-                <img data-animate="fade-up" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="Step 03" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="Step 03" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale">
               </div>
               <span class="text-[11px] uppercase tracking-[0.4em] text-[#c8b38e] block mb-4 font-bold italic">Phase III</span>
-              <h3 data-animate="fade-up" class="font-serif text-3xl mb-4">Focus</h3>
-              <p data-animate="fade-up" class="text-sm font-light text-[#333333] leading-relaxed">With distractions removed, return to uninterrupted work and steady progress.</p>
+              <h3 class="font-serif text-3xl mb-4">Focus</h3>
+              <p class="text-sm font-light text-[#333333] leading-relaxed">With distractions removed, return to uninterrupted work and steady progress.</p>
             </div>
           </div>
         </div>
@@ -182,13 +207,13 @@
       <section id="testimonials" class="py-32 px-6 lg:px-16 max-w-[1440px] mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
           <div>
-             <p data-animate="fade-up" class="text-[11px] uppercase tracking-[0.3em] text-[#707070] mb-6">Perspective</p>
-             <h2 data-animate="fade-up" class="font-serif text-5xl mb-12">Voices of <br>intent</h2>
+             <p class="text-[11px] uppercase tracking-[0.3em] text-[#707070] mb-6">Perspective</p>
+             <h2 class="font-serif text-5xl mb-12">Voices of <br>intent</h2>
           </div>
           <div class="space-y-32">
             <blockquote class="relative">
               <iconify-icon icon="lucide:quote" class="text-6xl text-[#c8b38e]/20 absolute -top-8 -left-8"></iconify-icon>
-              <p data-animate="fade-up" class="font-serif text-3xl font-light italic leading-relaxed mb-8">
+              <p class="font-serif text-3xl font-light italic leading-relaxed mb-8">
                 "Elyra fundamentally changed how our engineering team approaches context. It brings a necessary sense of architectural clarity to our daily operations."
               </p>
               <footer class="flex flex-col gap-2 border-l-2 border-[#c8b38e] pl-6">
@@ -198,7 +223,7 @@
             </blockquote>
             <blockquote class="relative">
               <iconify-icon icon="lucide:quote" class="text-6xl text-[#c8b38e]/20 absolute -top-8 -left-8"></iconify-icon>
-              <p data-animate="fade-up" class="font-serif text-3xl font-light italic leading-relaxed mb-8">
+              <p class="font-serif text-3xl font-light italic leading-relaxed mb-8">
                 "In an era of hyper-connected noise, Elyra is the first platform that actually helped our studio slow down and do better work."
               </p>
               <footer class="flex flex-col gap-2 border-l-2 border-[#c8b38e] pl-6">
@@ -214,15 +239,15 @@
       <section id="pricing" class="py-32 bg-[#faf8f4]">
         <div class="max-w-[1440px] mx-auto px-6 lg:px-16">
           <div class="text-center mb-24">
-            <p data-animate="fade-up" class="text-[11px] uppercase tracking-[0.3em] text-[#707070] mb-6">Pricing</p>
-            <h2 data-animate="fade-up" class="font-serif text-6xl tracking-tighter">Transparent tiers</h2>
+            <p class="text-[11px] uppercase tracking-[0.3em] text-[#707070] mb-6">Pricing</p>
+            <h2 class="font-serif text-6xl tracking-tighter">Transparent tiers</h2>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#e7e4df]">
             <!-- Starter -->
             <div class="p-16 flex flex-col items-center text-center">
               <span class="text-[10px] uppercase tracking-[0.2em] mb-12">Starter</span>
               <div class="font-serif text-5xl mb-8 font-light">$0</div>
-              <p data-animate="fade-up" class="text-xs font-light text-[#707070] mb-12 uppercase tracking-widest">For individuals</p>
+              <p class="text-xs font-light text-[#707070] mb-12 uppercase tracking-widest">For individuals</p>
               <ul class="space-y-4 mb-16 text-sm font-light">
                 <li>3 Projects</li>
                 <li>Core Modules</li>
@@ -234,7 +259,7 @@
             <div class="p-16 bg-[#080808] text-white flex flex-col items-center text-center">
               <span class="text-[10px] uppercase tracking-[0.2em] mb-12 text-[#c8b38e]">Professional</span>
               <div class="font-serif text-5xl mb-8 font-light">$24</div>
-              <p data-animate="fade-up" class="text-xs font-light text-white/60 mb-12 uppercase tracking-widest">For modern teams</p>
+              <p class="text-xs font-light text-white/60 mb-12 uppercase tracking-widest">For modern teams</p>
               <ul class="space-y-4 mb-16 text-sm font-light">
                 <li>Unlimited Projects</li>
                 <li>Automation Engine</li>
@@ -247,7 +272,7 @@
             <div class="p-16 flex flex-col items-center text-center">
               <span class="text-[10px] uppercase tracking-[0.2em] mb-12">Enterprise</span>
               <div class="font-serif text-5xl mb-8 font-light">Custom</div>
-              <p data-animate="fade-up" class="text-xs font-light text-[#707070] mb-12 uppercase tracking-widest">Large Scale</p>
+              <p class="text-xs font-light text-[#707070] mb-12 uppercase tracking-widest">Large Scale</p>
               <ul class="space-y-4 mb-16 text-sm font-light">
                 <li>SSO & Security</li>
                 <li>Custom Reporting</li>
@@ -262,8 +287,8 @@
       <!-- 7. FINAL CTA -->
       <section class="py-48 px-6 lg:px-16 text-center">
         <div class="max-w-4xl mx-auto">
-          <h2 data-animate="fade-up" class="font-serif text-[clamp(4rem,10vw,10rem)] line-tight tracking-editorial mb-16">Begin <br> <span class="italic font-light">today.</span></h2>
-          <p data-animate="fade-up" class="text-xl font-light text-[#333333] mb-16">The system that grows with your intention.</p>
+          <h2 class="font-serif text-[clamp(4rem,10vw,10rem)] line-tight tracking-editorial mb-16">Begin <br> <span class="italic font-light">today.</span></h2>
+          <p class="text-xl font-light text-[#333333] mb-16">The system that grows with your intention.</p>
           <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
             <a href="#" id="final-primary-cta" class="bg-black text-white px-16 py-6 text-[12px] uppercase tracking-[0.2em] hover:bg-[#222] transition-colors">Launch Elyra</a>
             <span class="text-[11px] uppercase tracking-[0.3em] text-[#707070]">No credit card required</span>
@@ -278,7 +303,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
           <div class="lg:col-span-5">
             <a href="/" id="footer-logo-link" class="font-serif text-3xl mb-8 block">Elyra</a>
-            <p data-animate="fade-up" class="text-base font-light text-[#707070] max-w-sm mb-12">Refined workflow for teams who value clarity above noise.</p>
+            <p class="text-base font-light text-[#707070] max-w-sm mb-12">Refined workflow for teams who value clarity above noise.</p>
             <div class="flex gap-8">
                <a href="#" id="f-tw" class="text-xl hover:text-[#c8b38e] transition-colors"><iconify-icon icon="lucide:twitter"></iconify-icon></a>
                <a href="#" id="f-ln" class="text-xl hover:text-[#c8b38e] transition-colors"><iconify-icon icon="lucide:linkedin"></iconify-icon></a>
@@ -310,7 +335,7 @@
           </div>
         </div>
         <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-[#f0eee9] text-[11px] uppercase tracking-[0.2em] text-[#9e9e9e]">
-          <p data-animate="fade-up">┬⌐ 2026 Elyra Studio</p>
+          <p>┬⌐ 2026 Elyra Studio</p>
           <div class="flex gap-12 mt-6 md:mt-0">
             <a href="#" id="f-l-07" class="hover:text-black">Privacy</a>
             <a href="#" id="f-l-08" class="hover:text-black">Terms</a>
@@ -320,11 +345,5 @@
       </div>
     </footer>
   </div>
-
-    </div>
-  </div>
-
-  <!-- Main Script -->
-  <script src="js/app.js" defer></script>
 </body>
 </html>
