@@ -45,6 +45,21 @@
   tracking: -0.04em;
 }
 
+.quiet-img-top {
+  transform: translateY(-30px);
+  /* instead of more */
+}
+
+.pricing-side {
+  opacity: 0.75;
+  /* instead of very faded */
+}
+
+footer {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
 /* Transitions */
 @view-transition {
   navigation: auto;
@@ -55,6 +70,8 @@
   animation-duration: 0.4s;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
 
 /* Hide scrollbar completely */
 html,
