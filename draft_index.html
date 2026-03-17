@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elyra — Intelligent Workflow Platform</title>
+  <meta name="description" content="Elyra is a minimalist workflow platform designed for focus and clarity.">
+  <meta name="theme-color" content="#f5f3ef">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+
+    :root {
+      --color-bg: #f5f3ef;
+      --color-bg-alt: #faf8f4;
+      --color-bg-deep: #eeebe6;
+      --color-text-pri: #111111;
+      --color-text-sec: #5f5f5f;
+      --color-text-subtle: #8a8a8a;
+      --color-border: #e7e4df;
+      --color-accent-gold: #c8b38e;
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Inter', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text-pri);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .serif {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-blur {
+      background-color: rgba(245, 243, 239, 0.95);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-expensive {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .btn-expensive:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -10px rgba(0,0,0,0.1);
+    }
+
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-animate].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .thin-divider {
+      height: 1px;
+      background-color: var(--color-border);
+    }
+
+    .texture-overlay {
+      background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+      opacity: 0.3;
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      gsap.registerPlugin(ScrollTrigger);
+      
+      document.querySelectorAll('[data-animate]').forEach(el => {
+        gsap.to(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            onEnter: () => el.classList.add('is-visible')
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="min-h-screen relative overflow-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-[#e7e4df]" id="main-nav">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="/" class="serif text-2xl tracking-tighter" id="nav-logo">Elyra</a>
+        <div class="hidden md:flex space-x-12">
+          <a href="#capability" class="text-[13px] uppercase tracking-widest text-[#5f5f5f] hover:text-[#111111] transition-colors" id="nav-link-product">Product</a>
+          <a href="#workflow" class="text-[13px] uppercase tracking-widest text-[#5f5f5f] hover:text-[#111111] transition-colors" id="nav-link-process">Process</a>
+          <a href="#testimonials" class="text-[13px] uppercase tracking-widest text-[#5f5f5f] hover:text-[#111111] transition-colors" id="nav-link-customers">Customers</a>
+          <a href="#pricing" class="text-[13px] uppercase tracking-widest text-[#5f5f5f] hover:text-[#111111] transition-colors" id="nav-link-pricing">Pricing</a>
+        </div>
+        <a href="#optin" class="bg-[#111111] text-[#f5f3ef] px-6 py-2.5 text-[13px] uppercase tracking-widest hover:bg-[#2f2f2f] transition-all" id="nav-cta-begin">Begin</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-44 pb-24 px-6" id="hero">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <h1 class="text-7xl md:text-8xl lg:text-9xl leading-[0.9] mb-8" data-animate>
+            Focus by<br>
+            <em class="serif italic">design</em>
+          </h1>
+          <p class="text-xl md:text-2xl text-[#5f5f5f] max-w-lg mb-12 font-light leading-relaxed" data-animate>
+            The quiet environment for intentional work. Distilled to its essence.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center gap-6" data-animate>
+            <a href="#optin" class="btn-expensive bg-[#111111] text-[#f5f3ef] px-10 py-5 text-sm uppercase tracking-[0.2em] w-full sm:w-auto text-center" id="hero-cta-main">Get Started</a>
+            <span class="text-[13px] text-[#8a8a8a] tracking-wider uppercase border-l border-[#e7e4df] pl-6 hidden sm:block">
+              Trusted by modern teams<br>worldwide
+            </span>
+          </div>
+        </div>
+        <div class="lg:col-span-5 relative">
+          <div class="aspect-[4/5] overflow-hidden bg-[#eeebe6]" data-animate>
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Luxury workspace" class="w-full h-full object-cover grayscale-[0.2] hover:scale-105 transition-transform duration-1000">
+          </div>
+          <div class="absolute -bottom-8 -left-12 w-48 h-48 bg-[#c8b38e] p-8 hidden xl:flex flex-col justify-end text-[#111111]" data-animate>
+            <span class="text-4xl serif">2026</span>
+            <span class="text-[10px] uppercase tracking-widest mt-2">Release Edition</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="py-32 bg-[#faf8f4] border-y border-[#e7e4df]" id="philosophy">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div class="lg:col-span-5 flex flex-col justify-center">
+            <p class="text-[12px] uppercase tracking-[0.3em] text-[#c8b38e] mb-6" data-animate>Philosophy</p>
+            <h2 class="text-5xl md:text-6xl mb-8" data-animate>Quiet focus.</h2>
+            <div class="space-y-6 text-lg text-[#5f5f5f] font-light leading-relaxed">
+              <p data-animate>
+                The best systems disappear. We removed the noise, leaving only the framework you need to do your core work. Efficiency isn't about speed; it's about the removal of friction.
+              </p>
+              <p data-animate>
+                Our approach prioritizes deep work sessions over frantic task management. Every pixel is intentional, every interaction is earned.
+              </p>
+              <div class="pt-8 flex items-baseline gap-4" data-animate>
+                <span class="text-5xl serif text-[#111111]">40%</span>
+                <span class="text-sm uppercase tracking-widest text-[#8a8a8a]">Increase in focus duration</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7 grid grid-cols-2 gap-6 items-start">
+            <div class="aspect-[3/4] overflow-hidden mt-12" data-animate>
+              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2069&auto=format&fit=crop" class="w-full h-full object-cover" alt="Modern architecture">
+            </div>
+            <div class="aspect-[3/4] overflow-hidden" data-animate>
+              <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1925&auto=format&fit=crop" class="w-full h-full object-cover" alt="Editorial tech">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="py-32 bg-[#f5f3ef]" id="capability">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-3xl mb-24">
+          <p class="text-[12px] uppercase tracking-[0.3em] text-[#c8b38e] mb-6" data-animate>Capabilities</p>
+          <h2 class="text-5xl md:text-6xl mb-8" data-animate>Built for depth</h2>
+          <p class="text-xl text-[#5f5f5f] font-light leading-relaxed" data-animate>
+            We've distilled project management to its fundamental essence. No generic templates, no unnecessary bells. Just the tools that matter for teams that build with intent.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#e7e4df] border border-[#e7e4df]">
+          <div class="bg-[#f5f3ef] p-12 hover:bg-[#faf8f4] transition-colors duration-500 group">
+            <span class="serif text-3xl text-[#c8b38e] block mb-12">01</span>
+            <h3 class="text-3xl mb-6">Cognitive Focus</h3>
+            <p class="text-[#5f5f5f] font-light leading-relaxed">
+              Surface only what truly matters. Elyra organizes tasks quietly, maintaining cognitive momentum without the constant need for manual active management.
+            </p>
+          </div>
+          <div class="bg-[#f5f3ef] p-12 hover:bg-[#faf8f4] transition-colors duration-500 group">
+            <span class="serif text-3xl text-[#c8b38e] block mb-12">02</span>
+            <h3 class="text-3xl mb-6">Silent Sync</h3>
+            <p class="text-[#5f5f5f] font-light leading-relaxed">
+              Work together without the ambient noise. Threaded discussions and shared context keep your team aligned without the notification fatigue.
+            </p>
+          </div>
+          <div class="bg-[#f5f3ef] p-12 hover:bg-[#faf8f4] transition-colors duration-500 group">
+            <span class="serif text-3xl text-[#c8b38e] block mb-12">03</span>
+            <h3 class="text-3xl mb-6">Intuitive Rules</h3>
+            <p class="text-[#5f5f5f] font-light leading-relaxed">
+              Automate routine actions naturally. Our flexible rules engine runs quietly in the background, adapting to your team's unique rhythm.
+            </p>
+          </div>
+          <div class="bg-[#f5f3ef] p-12 hover:bg-[#faf8f4] transition-colors duration-500 group">
+            <span class="serif text-3xl text-[#c8b38e] block mb-12">04</span>
+            <h3 class="text-3xl mb-6">Unified Space</h3>
+            <p class="text-[#5f5f5f] font-light leading-relaxed">
+              One space for everything. Documents, discussions, tasks, and timelines exist in a clear, high-contrast environment designed for longevity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="py-32 bg-[#eeebe6] relative" id="workflow">
+      <div class="texture-overlay absolute inset-0 pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
+          <div class="lg:col-span-8">
+             <div class="aspect-video overflow-hidden bg-[#faf8f4] mb-16 shadow-2xl" data-animate>
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop" alt="Editorial office" class="w-full h-full object-cover grayscale-[0.1]">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div class="space-y-4" data-animate>
+                <span class="text-[10px] uppercase tracking-[0.4em] text-[#c8b38e]">Phase I</span>
+                <h4 class="text-2xl serif">Gather</h4>
+                <p class="text-sm text-[#5f5f5f] font-light leading-relaxed">Bring your disparate projects into a singular, cohesive workspace. Integration happens natively, without friction.</p>
+              </div>
+              <div class="space-y-4" data-animate>
+                <span class="text-[10px] uppercase tracking-[0.4em] text-[#c8b38e]">Phase II</span>
+                <h4 class="text-2xl serif">Synthesize</h4>
+                <p class="text-sm text-[#5f5f5f] font-light leading-relaxed">Our intelligence layer surfaces patterns and bottlenecks automatically. Structure emerges where there was once chaos.</p>
+              </div>
+              <div class="space-y-4" data-animate>
+                <span class="text-[10px] uppercase tracking-[0.4em] text-[#c8b38e]">Phase III</span>
+                <h4 class="text-2xl serif">Execute</h4>
+                <p class="text-sm text-[#5f5f5f] font-light leading-relaxed">Return to uninterrupted work. Steady progress becomes the default state of your organization.</p>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-4">
+            <p class="text-[12px] uppercase tracking-[0.3em] text-[#c8b38e] mb-6" data-animate>Process</p>
+            <h2 class="text-5xl mb-8" data-animate>Intentional<br>workflow</h2>
+            <p class="text-lg text-[#5f5f5f] font-light leading-relaxed mb-12" data-animate>
+              We don't force a methodology. We provide the infrastructure for yours to flourish. A unified framework built for clarity across all levels.
+            </p>
+            <div class="p-8 bg-[#f5f3ef] border border-[#e7e4df]" data-animate>
+               <p class="serif italic text-xl mb-4">"Complexity is the enemy of execution."</p>
+               <p class="text-[10px] uppercase tracking-widest text-[#8a8a8a]">— Internal Design Principle</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-32 bg-[#faf8f4]" id="testimonials">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div class="lg:col-span-4">
+             <p class="text-[12px] uppercase tracking-[0.3em] text-[#c8b38e] mb-6" data-animate>Perspective</p>
+             <h2 class="text-5xl mb-8" data-animate>From the<br>architects</h2>
+             <p class="text-[#5f5f5f] font-light" data-animate>Leaders at the world's most innovative organizations use Elyra to protect their team's focus.</p>
+          </div>
+          <div class="lg:col-span-8 space-y-24">
+            <div data-animate>
+              <p class="serif text-3xl md:text-4xl leading-snug mb-12 italic text-[#111111]">
+                "Elyra fundamentally changed how our engineering team approaches context. It brings a necessary sense of architectural clarity to our daily operations that we couldn't find elsewhere."
+              </p>
+              <div class="flex items-center gap-6">
+                <div class="w-12 h-[1px] bg-[#c8b38e]"></div>
+                <div>
+                  <p class="text-sm uppercase tracking-widest text-[#111111]">Sarah Chen</p>
+                  <p class="text-[11px] uppercase tracking-widest text-[#8a8a8a]">VP of Product, Meridian Technology</p>
+                </div>
+              </div>
+            </div>
+            <div class="thin-divider"></div>
+            <div data-animate>
+              <p class="serif text-3xl md:text-4xl leading-snug mb-12 italic text-[#111111]">
+                "In an era of hyper-connected noise, Elyra is the first platform that actually helped our studio slow down, focus, and do significantly better work with smaller teams."
+              </p>
+              <div class="flex items-center gap-6">
+                <div class="w-12 h-[1px] bg-[#c8b38e]"></div>
+                <div>
+                  <p class="text-sm uppercase tracking-widest text-[#111111]">Amara Osei</p>
+                  <p class="text-[11px] uppercase tracking-widest text-[#8a8a8a]">Chief Design Officer, Solstice Studio</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-32 bg-[#f5f3ef] border-t border-[#e7e4df]" id="pricing">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+          <p class="text-[12px] uppercase tracking-[0.3em] text-[#c8b38e] mb-6" data-animate>Pricing</p>
+          <h2 class="text-5xl md:text-6xl mb-4" data-animate>Clear structure</h2>
+          <p class="text-lg text-[#5f5f5f] font-light" data-animate>Transparent, fixed tiers. Start for free, grow with intent.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-[#faf8f4] p-12 border border-[#e7e4df] flex flex-col" data-animate>
+            <h3 class="text-sm uppercase tracking-[0.2em] mb-8 text-[#8a8a8a]">Starter</h3>
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-4xl serif">$0</span>
+              <span class="text-xs uppercase tracking-widest text-[#8a8a8a]">Forever</span>
+            </div>
+            <p class="text-[11px] uppercase tracking-widest text-[#c8b38e] mb-8">Perfect for getting started</p>
+            <p class="text-sm text-[#5f5f5f] font-light mb-12">Individual contributors seeking personal clarity and organized workflows.</p>
+            <ul class="space-y-4 text-xs uppercase tracking-widest text-[#5f5f5f] mb-12 flex-grow">
+              <li class="flex items-center gap-3"><iconify-icon icon="lucide:check" class="text-[#c8b38e]"></iconify-icon> 3 Active Projects</li>
+              <li class="flex items-center gap-3"><iconify-icon icon="lucide:check" class="text-[#c8b38e]"></iconify-icon> Essential Core Features</li>
+              <li class="flex items-center gap-3"><iconify-icon icon="lucide:check" class="text-[#c8b38e]"></iconify-icon> Community Support</li>
+            </ul>
+            <a href="#" class="block text-center border border-[#111111] py-4 text-[11px] uppercase tracking-[0.2em] hover:bg-[#111111] hover:text-[#f5f3ef] transition-all" id="pricing-starter-btn">Begin Free</a>
+          </div>
+
+          <div class="bg-[#111111] p-12 border border-[#111111] flex flex-col text-[#f5f3ef] shadow-2xl transform md:-translate-y-4" data-animate>
+            <h3 class="text-sm uppercase tracking-[0.2em] mb-8 text-[#8a8a8a]">Professional</h3>
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-4xl serif">$24</span>
+              <span class="text-xs uppercase tracking-widest text-[#8a8a8a]">Per Month</span>
+            </div>
+            <p class="text-[11px] uppercase tracking-widest text-[#c8b38e] mb-8">Our most popular choice</p>
+            <p class="text-sm text-[#8a8a8a] font-light mb-12">Designed for growing teams that prioritize deep work and collaborative sync.</p>
+            <ul class="space-y-4 text-xs uppercase tracking-widest text-[#faf8f4] mb-12 flex-grow">
+              <li class="flex items-center gap-3"><iconify-icon icon="lucide:check" class="text-[#c8b38e]"></iconify-icon> Unlimited Projects</li>
+              <li class="flex items-center gap-3"><iconify-icon icon="lucide:check" class="text-[#c8b38e]"></iconify-icon> Advanced Automation</li>
+              <li class="flex items-center gap-3"><iconify-icon icon="lucide:check" class="text-[#c8b38e]"></iconify-icon> Team Governance</li>
+              <li class="flex items-center gap-3"><iconify-icon icon="lucide:check" class="text-[#c8b38e]"></iconify-icon> Priority Support</li>
+            </ul>
+            <a href="#" class="block text-center bg-[#f5f3ef] text-[#111111] py-4 text-[11px] uppercase tracking-[0.2em] hover:bg-[#c8b38e] transition-all" id="pricing-pro-btn">Start Trial</a>
+          </div>
+
+          <div class="bg-[#faf8f4] p-12 border border-[#e7e4df] flex flex-col" data-animate>
+            <h3 class="text-sm uppercase tracking-[0.2em] mb-8 text-[#8a8a8a]">Enterprise</h3>
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-4xl serif">Custom</span>
+            </div>
+            <p class="text-[11px] uppercase tracking-widest text-[#c8b38e] mb-8">Custom solutions for scale</p>
+            <p class="text-sm text-[#5f5f5f] font-light mb-12">Sophisticated controls and dedicated resources for large scale organizations.</p>
+            <ul class="space-y-4 text-xs uppercase tracking-widest text-[#5f5f5f] mb-12 flex-grow">
+              <li class="flex items-center gap-3"><iconify-icon icon="lucide:check" class="text-[#c8b38e]"></iconify-icon> Custom Deployments</li>
+              <li class="flex items-center gap-3"><iconify-icon icon="lucide:check" class="text-[#c8b38e]"></iconify-icon> SSO & Advanced Security</li>
+              <li class="flex items-center gap-3"><iconify-icon icon="lucide:check" class="text-[#c8b38e]"></iconify-icon> 24/7 Concierge Support</li>
+            </ul>
+            <a href="#" class="block text-center border border-[#111111] py-4 text-[11px] uppercase tracking-[0.2em] hover:bg-[#111111] hover:text-[#f5f3ef] transition-all" id="pricing-enterprise-btn">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-32 bg-[#eeebe6] text-center border-t border-[#e7e4df]" id="optin">
+      <div class="max-w-2xl mx-auto px-6">
+        <h2 class="text-7xl md:text-8xl mb-12" data-animate>Begin</h2>
+        <p class="text-xl text-[#5f5f5f] font-light leading-relaxed mb-12" data-animate>
+          For teams who choose to work with intention. Experience the new standard for modern productivity.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 mb-8" data-animate>
+          <input type="email" placeholder="Email address" class="flex-grow px-6 py-5 bg-[#faf8f4] border border-[#e7e4df] text-[13px] tracking-widest focus:outline-none focus:border-[#c8b38e]">
+          <button type="submit" class="bg-[#111111] text-[#f5f3ef] px-10 py-5 text-[11px] uppercase tracking-[0.3em] hover:bg-[#2f2f2f] transition-all" id="footer-subscribe-btn">Subscribe</button>
+        </form>
+        <p class="text-[10px] uppercase tracking-[0.2em] text-[#8a8a8a]" data-animate>No credit card required. Cancel anytime.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-[#f5f3ef] border-t border-[#e7e4df]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <div>
+            <a href="/" class="serif text-3xl tracking-tighter" id="footer-logo">Elyra</a>
+            <p class="text-[11px] uppercase tracking-widest text-[#8a8a8a] mt-2">Workflow, distilled.</p>
+          </div>
+          <div class="flex gap-12 text-[11px] uppercase tracking-widest text-[#5f5f5f]">
+            <a href="#" class="hover:text-[#111111] transition-colors" id="footer-link-about">About</a>
+            <a href="#" class="hover:text-[#111111] transition-colors" id="footer-link-blog">Journal</a>
+            <a href="#" class="hover:text-[#111111] transition-colors" id="footer-link-privacy">Privacy</a>
+            <a href="#" class="hover:text-[#111111] transition-colors" id="footer-link-terms">Terms</a>
+          </div>
+          <div class="flex gap-6">
+            <a href="#" class="text-[#5f5f5f] hover:text-[#111111]" id="social-x"><iconify-icon icon="ri:twitter-x-line" class="text-xl"></iconify-icon></a>
+            <a href="#" class="text-[#5f5f5f] hover:text-[#111111]" id="social-li"><iconify-icon icon="ri:linkedin-line" class="text-xl"></iconify-icon></a>
+            <a href="#" class="text-[#5f5f5f] hover:text-[#111111]" id="social-gh"><iconify-icon icon="ri:github-line" class="text-xl"></iconify-icon></a>
+          </div>
+        </div>
+        <div class="mt-16 pt-8 border-t border-[#e7e4df] text-center">
+           <p class="text-[10px] uppercase tracking-widest text-[#8a8a8a]">&copy; 2026 Elyra. Editorial Workflow Platform.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

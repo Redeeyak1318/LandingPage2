@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elyra — Intelligent Workflow Platform</title>
+  <meta name="description" content="Elyra is a minimalist workflow platform designed for focus and clarity.">
+  <meta name="theme-color" content="#f8f7f4">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preloads -->
+  <link rel="preload" as="image" href="img/hero-workspace.webp" type="image/webp" fetchpriority="high">
+  
+  <!-- Fonts; Playfair Display and Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+  <!-- Barba.js Page Transitions -->
+  <script src="https://unpkg.com/@barba/core@2.10.3/dist/barba.umd.js" defer></script>
+
+</head>
+<body>
+
+
+  <!-- Navigation -->
+  <nav class="nav nav--hero-transparent" id="mainNav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" id="navLogo">Elyra</a>
+      <div class="nav__links" id="navLinks">
+        <a href="#capability" class="nav__link" data-nav-link>Product</a>
+        <a href="#workflow" class="nav__link" data-nav-link>Process</a>
+        <a href="#testimonials" class="nav__link" data-nav-link>Customers</a>
+        <a href="#pricing" class="nav__link" data-nav-link>Pricing</a>
+      </div>
+      <a href="#optin" class="nav__cta" id="navCta">Begin</a>
+      <button class="nav__menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__inner">
+      <a href="#capability" class="mobile-menu__link" data-mobile-link>Product</a>
+      <a href="#workflow" class="mobile-menu__link" data-mobile-link>Process</a>
+      <a href="#testimonials" class="mobile-menu__link" data-mobile-link>Customers</a>
+      <a href="#pricing" class="mobile-menu__link" data-mobile-link>Pricing</a>
+      <a href="#optin" class="mobile-menu__cta" data-mobile-link>Begin</a>
+    </div>
+  </div>
+
+  <!-- Barba.js Wrapper -->
+  <div data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="home">
+
+
+      <!-- ═══════════════════════════════════════════════════
+           1. HERO
+           Full-width luxury image background
+           ═══════════════════════════════════════════════════ -->
+      <section class="hero" id="hero">
+        <div class="hero__bg">
+          <img src="img/hero-workspace.webp" alt="" class="hero__bg-img" fetchpriority="high" loading="eager" decoding="async">
+          <div class="hero__bg-overlay"></div>
+        </div>
+        <div class="hero__content">
+          <h1 class="hero__title">
+            Focus by<br>
+            <em>design</em>
+          </h1>
+          <p class="hero__subtitle">
+            Intentional work. Distilled to its essence.
+          </p>
+          <div class="hero__actions">
+            <a href="#optin" class="btn btn--primary-light" id="heroCta">Begin</a>
+            <span class="hero__trust" data-animate="fade-up" data-delay="0.1" style="font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-left: var(--space-md); color: rgba(255,255,255,0.7);">Trusted by modern teams worldwide</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ═══════════════════════════════════════════════════
+           2. VALUE PROPOSITION
+           Short refined messaging
+           ═══════════════════════════════════════════════════ -->
+      <section class="value" id="value">
+        <div class="value__container">
+          <p class="section-label" data-animate="fade-up">Philosophy</p>
+          <h2 class="value__headline" data-animate="fade-up" data-delay="0.1">
+            Quiet focus.
+          </h2>
+          <p class="value__body" data-animate="fade-up" data-delay="0.2">
+            The best systems disappear. We removed the noise, leaving only the framework you need to do your core work.
+          </p>
+          <p class="value__sub-body" data-animate="fade-up" data-delay="0.3" style="color: var(--color-text-soft); font-size: 0.95rem; margin-top: var(--space-md); max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+            Our approach prioritizes deep work sessions over frantic task management. Every pixel is intentional, every interaction is earned.
+          </p>
+          <div class="value__stat" data-animate="fade-up" data-delay="0.4" style="margin-top: var(--space-lg); display: flex; align-items: center; justify-content: center; gap: var(--space-sm);">
+            <strong style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--color-text); font-weight: 400;">40%</strong>
+            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted); text-align: left; max-width: 120px; line-height: 1.4;">Increase in<br>focus duration</span>
+          </div>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 2.5fr 1fr; gap: var(--space-xl); max-width: 1100px; margin: var(--space-4xl) auto 0; align-items: start;">
+          <div class="value__visual" data-animate="fade-up" data-delay="0.3" style="margin-top: 0; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+            <img src="https://images.unsplash.com/photo-1600607688969-a5e2f7b82f05?q=80&w=2100&auto=format&fit=crop" alt="Cinematic architecture" class="value__img" loading="lazy" decoding="async" width="2100" height="900" style="object-fit: cover; height: 100%; border-radius: var(--radius-sm); filter: brightness(0.9) contrast(1.1);">
+          </div>
+          <div class="value__visual-small" data-animate="fade-up" data-delay="0.4" style="margin-top: 4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?q=80&w=1925&auto=format&fit=crop" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9) contrast(1.1) grayscale(0.2); border-radius: var(--radius-sm);" alt="Editorial tech">
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ═══════════════════════════════════════════════════
+           3. PRODUCT CAPABILITY
+           Text-led platform strength
+           ═══════════════════════════════════════════════════ -->
+      <div class="section-divider"></div>
+
+      <section class="capability bg-alt" id="capability">
+        <div class="capability__container">
+          <div class="capability__header" data-animate="fade-up">
+            <p class="section-label">Capabilities</p>
+            <h2 class="section-title">Built for depth</h2>
+            <p class="section-microcopy" style="margin-bottom: var(--space-md);">Every feature designed to reduce friction.</p>
+            <p class="section-microcopy" style="font-size: 0.95rem;">We've distilled project management to its fundamental essence. No generic templates, no unnecessary bells. Just the tools that matter for teams that build with intent.</p>
+          </div>
+
+          <div class="capability__list">
+            <article class="capability__item" data-animate="fade-up">
+              <span class="capability__number">01</span>
+              <div class="capability__text">
+                <h3 class="capability__name">Focus</h3>
+                <p class="capability__desc">
+                  Surface what matters. Elyra organizes tasks quietly, maintaining momentum without the need for active management.
+                </p>
+              </div>
+            </article>
+
+            <div class="divider-line" data-animate="draw-line"></div>
+
+            <article class="capability__item" data-animate="fade-up">
+              <span class="capability__number">02</span>
+              <div class="capability__text" style="padding-left: var(--space-2xl);">
+                <h3 class="capability__name">Collaboration</h3>
+                <p class="capability__desc">
+                  Work together without the noise. Threaded discussions and shared context keep your team aligned.
+                </p>
+              </div>
+            </article>
+
+            <div class="divider-line" data-animate="draw-line"></div>
+
+            <article class="capability__item" data-animate="fade-up">
+              <span class="capability__number">03</span>
+              <div class="capability__text">
+                <h3 class="capability__name">Automation</h3>
+                <p class="capability__desc">
+                  Automate routine actions naturally. Flexible rules run quietly in the background without rigid constraints.
+                </p>
+              </div>
+            </article>
+
+            <div class="divider-line" data-animate="draw-line"></div>
+
+            <article class="capability__item" data-animate="fade-up">
+              <span class="capability__number">04</span>
+              <div class="capability__text" style="padding-left: var(--space-2xl);">
+                <h3 class="capability__name">Workspace</h3>
+                <p class="capability__desc">
+                  One space for everything. Documents, discussions, tasks, and timelines exist in a clear environment.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ═══════════════════════════════════════════════════
+           4. WORKFLOW OVERVIEW
+           Refined language describing the process
+           ═══════════════════════════════════════════════════ -->
+      <div class="section-divider"></div>
+
+      <section class="workflow" id="workflow">
+        <div class="workflow__container">
+          <div class="workflow__header" data-animate="fade-up">
+            <p class="section-label">Process</p>
+            <h2 class="section-title">Intentional process</h2>
+            <p class="section-microcopy">A unified framework for clarity.</p>
+          </div>
+
+          <div class="workflow__visual" data-animate="fade-up" data-delay="0.1">
+            <img src="img/workflow-photo.webp" alt="" class="workflow__img" loading="lazy" decoding="async" width="1600" height="900">
+          </div>
+
+          <div class="workflow__steps" style="align-items: flex-start;">
+            <div class="workflow__step" data-animate="fade-up" data-delay="0.1">
+              <div style="margin-bottom: var(--space-md); overflow: hidden; border-radius: var(--radius-sm);">
+                <img src="https://images.unsplash.com/photo-1618060932014-4ce49e49c95d?q=80&w=600&auto=format&fit=crop" style="width: 100%; aspect-ratio: 4/3; object-fit: cover; filter: brightness(0.85) contrast(1.1); transition: transform 0.6s ease;" alt="Small workflow visual" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              </div>
+              <span class="workflow__step-num">I</span>
+              <h3 class="workflow__step-title">Gather</h3>
+              <p class="workflow__step-desc">
+                Bring your projects and team into one workspace without forcing a new methodology.
+              </p>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: var(--space-sm);">Integration happens natively without friction.</p>
+            </div>
+
+            <div class="workflow__step" data-animate="fade-up" data-delay="0.2" style="margin-top: var(--space-2xl);">
+              <span class="workflow__step-num">II</span>
+              <h3 class="workflow__step-title">Organize</h3>
+              <p class="workflow__step-desc">
+                Systematically surface what needs attention. Structure emerges naturally.
+              </p>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: var(--space-sm);">Our intelligence layer spots bottlenecks automatically.</p>
+            </div>
+
+            <div class="workflow__step" data-animate="fade-up" data-delay="0.3" style="margin-top: var(--space-xl);">
+              <span class="workflow__step-num">III</span>
+              <h3 class="workflow__step-title">Focus</h3>
+              <p class="workflow__step-desc">
+                With distractions removed, return to uninterrupted work and steady progress.
+              </p>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: var(--space-sm);">Steady progress becomes the default state.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ═══════════════════════════════════════════════════
+           5. INTEGRATIONS
+           Text-focused, calm presentation
+           ═══════════════════════════════════════════════════ -->
+      <div class="section-divider"></div>
+
+      <section class="integrations bg-alt" id="integrations">
+        <div class="integrations__container">
+          <div class="integrations__left" data-animate="fade-up">
+            <p class="section-label">Integrations</p>
+            <h2 class="section-title">Connects<br>natively</h2>
+            <p class="section-microcopy">Uninterrupted operations.</p>
+            <p class="integrations__desc">
+              Elyra connects directly to your existing tools. Zero disruption.
+            </p>
+          </div>
+          <div class="integrations__right" data-animate="fade-up" data-delay="0.15">
+            <div class="integrations__grid">
+              <span class="integrations__name">Slack</span>
+              <span class="integrations__name">GitHub</span>
+              <span class="integrations__name">Figma</span>
+              <span class="integrations__name">Notion</span>
+              <span class="integrations__name">Linear</span>
+              <span class="integrations__name">Google Workspace</span>
+              <span class="integrations__name">Jira</span>
+              <span class="integrations__name">Zapier</span>
+              <span class="integrations__name">Stripe</span>
+              <span class="integrations__name">Vercel</span>
+              <span class="integrations__name">Salesforce</span>
+              <span class="integrations__name">HubSpot</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ═══════════════════════════════════════════════════
+           6. PERFORMANCE + INTELLIGENCE
+           Analytics and automation clarity
+           ═══════════════════════════════════════════════════ -->
+      <div class="section-divider"></div>
+
+      <section class="intelligence" id="intelligence">
+        <div class="intelligence__container">
+          <div class="intelligence__header" data-animate="fade-up">
+            <p class="section-label">Intelligence</p>
+            <h2 class="section-title">Clear signals</h2>
+            <p class="section-microcopy">Insights delivered precisely when needed.</p>
+          </div>
+
+          <div class="intelligence__grid">
+            <div class="intelligence__block" data-animate="fade-up" data-delay="0.1">
+              <h3 class="intelligence__block-title">Project Health</h3>
+              <p class="intelligence__block-desc">
+                Understand status at a glance. Clear indicators delivered exactly when needed.
+              </p>
+            </div>
+
+            <div class="intelligence__block" data-animate="fade-up" data-delay="0.15">
+              <h3 class="intelligence__block-title">Adjustments</h3>
+              <p class="intelligence__block-desc">
+                Automate routine steps dynamically to maintain team velocity without friction.
+              </p>
+            </div>
+
+            <div class="intelligence__block" data-animate="fade-up" data-delay="0.2">
+              <h3 class="intelligence__block-title">Weekly Briefs</h3>
+              <p class="intelligence__block-desc">
+                Progress distilled to its essence. No complex dashboards—just clear understanding.
+              </p>
+            </div>
+
+            <div class="intelligence__block" data-animate="fade-up" data-delay="0.25">
+              <h3 class="intelligence__block-title">Focus Metrics</h3>
+              <p class="intelligence__block-desc">
+                Measure what matters: uninterrupted deep work hours and milestones achieved.
+              </p>
+            </div>
+          </div>
+
+          <div class="intelligence__visual" data-animate="fade-up" data-delay="0.15">
+            <img src="img/intelligence-photo.webp" alt="" class="intelligence__img" loading="lazy" decoding="async" width="2100" height="900">
+          </div>
+
+          <div class="intelligence__metrics" data-animate="fade-up" data-delay="0.2">
+            <div class="intelligence__metric">
+              <span class="intelligence__metric-val">2.5×</span>
+              <span class="intelligence__metric-label">execution speed</span>
+            </div>
+            <div class="intelligence__metric">
+              <span class="intelligence__metric-val">80%</span>
+              <span class="intelligence__metric-label">noise reduction</span>
+            </div>
+            <div class="intelligence__metric">
+              <span class="intelligence__metric-val">0</span>
+              <span class="intelligence__metric-label">friction observed</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ═══════════════════════════════════════════════════
+           7. TESTIMONIALS
+           Clean editorial quotes
+           ═══════════════════════════════════════════════════ -->
+      <div class="section-divider"></div>
+
+      <section class="testimonials bg-alt" id="testimonials">
+        <div class="testimonials__container">
+          <div class="testimonials__header" data-animate="fade-up">
+            <p class="section-label">Perspective</p>
+            <h2 class="section-title">From our<br>customers</h2>
+            <p class="section-microcopy">Leaders working with clarity.</p>
+          </div>
+
+          <div class="testimonials__list">
+            <blockquote class="testimonial" data-animate="fade-up" data-delay="0.1">
+              <p class="testimonial__quote">
+                "Elyra fundamentally changed how our engineering team approaches context. It brings a necessary sense of architectural clarity to our daily operations that we couldn't find elsewhere."
+              </p>
+              <footer class="testimonial__author">
+                <span class="testimonial__name">Sarah Chen</span>
+                <span class="testimonial__role" style="font-size: 0.8rem;">VP of Product, Meridian Technology</span>
+              </footer>
+            </blockquote>
+
+            <div class="divider-line" data-animate="draw-line"></div>
+
+            <blockquote class="testimonial" data-animate="fade-up" data-delay="0.15">
+              <p class="testimonial__quote">
+                "In an era of hyper-connected noise, Elyra is the first platform that actually helped our studio slow down, focus, and do significantly better work with smaller teams."
+              </p>
+              <footer class="testimonial__author">
+                <span class="testimonial__name">Amara Osei</span>
+                <span class="testimonial__role" style="font-size: 0.8rem;">Chief Design Officer, Solstice Studio</span>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ═══════════════════════════════════════════════════
+           8. PRICING
+           Minimal clean SaaS pricing
+           ═══════════════════════════════════════════════════ -->
+      <div class="section-divider"></div>
+
+      <section class="pricing" id="pricing">
+        <div class="pricing__container">
+          <div class="pricing__header" data-animate="fade-up">
+            <p class="section-label">Pricing</p>
+            <h2 class="section-title">Clear structure</h2>
+            <p class="pricing__subtitle">Transparent, fixed tiers. Start free.</p>
+          </div>
+
+          <div class="pricing__grid">
+            <div class="pricing__plan" data-animate="fade-up" data-delay="0.1">
+              <h3 class="pricing__plan-name">Starter</h3>
+              <div class="pricing__plan-price">
+                <span class="pricing__amount">$0</span>
+                <span class="pricing__period">forever</span>
+              </div>
+              <p class="pricing__plan-desc">For individuals.</p>
+              <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;">Individual contributors seeking personal clarity and organized workflows.</p>
+              <ul class="pricing__plan-features">
+                <li>3 projects</li>
+                <li>Core features</li>
+                <li>Basic support</li>
+              </ul>
+              <a href="#optin" class="btn btn--outline" id="pricingStarter">Start Free</a>
+            </div>
+
+            <div class="pricing__plan pricing__plan--featured" data-animate="fade-up" data-delay="0.2">
+              <h3 class="pricing__plan-name">Professional</h3>
+              <div class="pricing__plan-price">
+                <span class="pricing__amount">$24</span>
+                <span class="pricing__period">per user / month</span>
+              </div>
+              <p class="pricing__plan-desc">For professional teams.</p>
+              <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-bottom: var(--space-md); line-height: 1.5;">Designed for growing teams that prioritize deep work and collaborative sync.</p>
+              <ul class="pricing__plan-features">
+                <li>Unlimited projects</li>
+                <li>Team collaboration</li>
+                <li>Automation rules</li>
+                <li>Priority support</li>
+              </ul>
+              <a href="#optin" class="btn btn--primary" id="pricingPro">Start Trial</a>
+            </div>
+
+            <div class="pricing__plan" data-animate="fade-up" data-delay="0.3">
+              <h3 class="pricing__plan-name">Enterprise</h3>
+              <div class="pricing__plan-price">
+                <span class="pricing__amount">Custom</span>
+                <span class="pricing__period">&nbsp;</span>
+              </div>
+              <p class="pricing__plan-desc">For large organizations.</p>
+              <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;">Sophisticated controls and dedicated resources for large scale organizations.</p>
+              <ul class="pricing__plan-features">
+                <li>Custom deployments</li>
+                <li>SSO & Security</li>
+                <li>Dedicated support</li>
+                <li>Custom billing</li>
+              </ul>
+              <a href="#optin" class="btn btn--outline" id="pricingEnterprise">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ═══════════════════════════════════════════════════
+           9. OPT-IN
+           Email capture with minimal tone
+           ═══════════════════════════════════════════════════ -->
+      <div class="section-divider"></div>
+
+      <section class="optin bg-alt" id="optin">
+        <div class="optin__container">
+          <h2 class="optin__title" data-animate="fade-up">The Journal</h2>
+          <p class="optin__subtitle" data-animate="fade-up" data-delay="0.1">
+            Thoughts on intentional work. No noise.
+          </p>
+          <!-- 
+            Autoresponder-Ready Setup
+            Replace the 'action' and 'method' with your provider's details:
+            - Mailchimp: <form action="YOUR_MAILCHIMP_URL" method="post" ...>
+            - ConvertKit: <form action="YOUR_CONVERTKIT_URL" method="post" ...>
+            - Webflow: Add data-name="Opt-in Form"
+          -->
+          <form class="optin__form" data-animate="fade-up" data-delay="0.2" id="optinForm" action="#" method="POST" data-name="Email Opt-in">
+            <div class="optin__fields">
+              <input
+                type="text"
+                class="optin__input"
+                id="optinName"
+                name="NAME"
+                placeholder="Name"
+                aria-label="Name"
+                required
+              >
+              <input
+                type="email"
+                class="optin__input"
+                id="optinEmail"
+                name="EMAIL"
+                placeholder="Email address"
+                aria-label="Email address"
+                required
+              >
+            </div>
+            <button type="submit" class="btn btn--primary optin__btn" id="optinSubmit">Subscribe</button>
+          </form>
+          <p class="optin__disclaimer" data-animate="fade-up" data-delay="0.25">
+            Unsubscribe at any time.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ═══════════════════════════════════════════════════
+           10. FINAL CTA
+           Confident close
+           ═══════════════════════════════════════════════════ -->
+      <section class="final-cta" id="start">
+        <div class="final-cta__container">
+          <h2 class="final-cta__title" data-animate="fade-up">
+            Begin
+          </h2>
+          <p class="final-cta__subtitle" data-animate="fade-up" data-delay="0.1">
+            For teams who choose to work with intention.
+          </p>
+          <div class="final-cta__actions" data-animate="fade-up" data-delay="0.2">
+            <a href="#" class="btn btn--primary btn--large" id="ctaMain">Begin</a>
+          </div>
+          <p class="final-cta__note" data-animate="fade-up" data-delay="0.3">
+            No credit card required.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ═══════════════════════════════════════════════════
+           11. FOOTER
+           Social icons only — no other icons
+           ═══════════════════════════════════════════════════ -->
+      <footer class="footer" id="footer">
+        <div class="footer__container">
+          <div class="footer__top">
+            <div class="footer__brand">
+              <a href="/" class="footer__logo">Elyra</a>
+              <p class="footer__tagline">Workflow, refined.</p>
+            </div>
+            <div class="footer__columns">
+              <div class="footer__column">
+                <h4 class="footer__column-title">Company</h4>
+                <a href="#" class="footer__link">About</a>
+                <a href="#" class="footer__link">Blog</a>
+                <a href="#" class="footer__link">Careers</a>
+                <a href="#" class="footer__link">Contact</a>
+              </div>
+              <div class="footer__column">
+                <h4 class="footer__column-title">Legal</h4>
+                <a href="#" class="footer__link">Privacy Policy</a>
+                <a href="#" class="footer__link">Terms of Service</a>
+                <a href="#" class="footer__link">Security</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <p class="footer__copyright">&copy; 2026 Elyra. All rights reserved.</p>
+            <div class="footer__social">
+              <a href="#" class="footer__social-link" aria-label="Twitter / X">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16h-4.267z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"/><path d="M8 11l0 5"/><path d="M8 8l0 .01"/><path d="M12 16l0 -5"/><path d="M16 16v-3a2 2 0 0 0 -4 0"/></svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"/></svg>
+              </a>
+              <a href="#" class="footer__social-link" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+    </div>
+  </div>
+
+  <!-- Main Script -->
+  <script src="js/app.js" defer></script>
+
+</body>
+</html>
